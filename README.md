@@ -1,6 +1,18 @@
 # DeepLearning
-## 강의진행에 요청사항폼 https://forms.gle/xf7ajtvgrGdn8K1Z9
-## 구글드라이브 https://drive.google.com/drive/folders/1zdbT8ELimUixLKOXOhBnrhT1sZCm5E9g?usp=drive_link
+
+#### 전이학습모델작업(일반모델도)구성요소:   (캐글, 논문등 유사 성공사례를 기준으로 해도 됨)
+     .제공되는 7-3 또는 7-4자료를 기반으로 해도 좋으니, 아래 요소들이 다 포함되게 작업해보세요 
+      데이터로더기(배치갯수 선정이유: 원칙적으로는 필요하나, 지금과 같은 자원의 한계에서는 32또는 64정도로)
+                                                     배치 16,32,64로 작업하면서 모델 성능 기록한 차트필요
+      옵션값 설정 이유, 전처리기 (transform) 요소 세팅한 이유
+      사전학습모델 선정이유, 사전학습모델 튜닝 요소 (근거가 반드시 있을것)
+      모델의 학습과정에서 특이한것 있으면 넣기
+      모델 성능평가 요소(선택한 이유, 근거, 특히 정밀도 재현율에서 어떤 부분을 중점으로 봤는가?)
+      모델성능 시각화 (분류리포트 및 시각화, CAM, t-sne, pca등) 선택이유도 넣어야함.
+      추론데이터set의 근거
+      모델 서비스가 주이면, 서비스모델까지 만드는 과정 간단히, 성능도 (예: 모바일기기 서비스에 맞는 모델로 변경)
+#### 강의진행에 요청사항폼 https://forms.gle/xf7ajtvgrGdn8K1Z9
+#### 구글드라이브 https://drive.google.com/drive/folders/1zdbT8ELimUixLKOXOhBnrhT1sZCm5E9g?usp=drive_link
 
 - 이미지데이터 이해도 : https://forms.gle/3hqYQhdHuL5a2XRz6
 - 딥러닝 이해도:  https://forms.gle/HY7dBBmbRLGbbgsk8
