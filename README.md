@@ -2,6 +2,7 @@
 ## 강의진행에 요청사항폼 https://forms.gle/xf7ajtvgrGdn8K1Z9
 - 이미지데이터 이해도 : https://forms.gle/3hqYQhdHuL5a2XRz6
 - 딥러닝 이해도:  https://forms.gle/HY7dBBmbRLGbbgsk8
+- 전이학습 이해도: https://forms.gle/sTGaJ1CsWu2BkkRv7
 
 ## 11월13일(목) 전이학습  
 | 시간 | 구분 | 내용 |
