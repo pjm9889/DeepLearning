@@ -1,3 +1,4 @@
+#### 부성순 bakpak@empas.com / 010-5155-2953  
 #### 구글 공유폴더 :  zip파일 위치   https://drive.google.com/drive/folders/1zdbT8ELimUixLKOXOhBnrhT1sZCm5E9g?usp=drive_link
 #### 강의요청사항: https://forms.gle/37KT54JSPZU5kyHu7
 #### 딥러닝이해도:  https://forms.gle/FgKtSoyuWDSGVXVe9
@@ -19,4 +20,5 @@
 ##### 12:00 - 14:00 : [정리 & 실습]
 ##### 14:00 - 18:00 : SSD모델등 (미션스프린트가 SSD모델입니다)
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
+
 
