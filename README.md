@@ -3,6 +3,12 @@
 #### 이론: 11.19(수) 13:00 - 11.20(목) 18:00 까지
 #### 실기: 11.20(목) 18:00 - 11.24(월) 18:00 까지
 
+구글 공유폴더 :  zip파일 위치
+https://drive.google.com/drive/folders/1zdbT8ELimUixLKOXOhBnrhT1sZCm5E9g?usp=drive_link
+
+
+
+
 
 ### 강의일정
 #### 11.19일(수)
