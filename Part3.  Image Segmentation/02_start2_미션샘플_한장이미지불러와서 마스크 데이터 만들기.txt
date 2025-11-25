@@ -1,0 +1,25 @@
+import pandas as pd
+df = pd.read_csv('/content/camvid/CamVid/class_dict.csv')
+COLOR_MAP = df[['r', 'g', 'b']].values
+len(COLOR_MAP)
+#---------------------------------------------------------------------------
+import cv2
+import matplotlib.pyplot as plt
+
+img='/content/camvid/CamVid/test_labels/0001TP_006690_L.png'
+img=cv2.imread(img)
+img=cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
+
+h, w, _ = img.shape
+mask = np.zeros((h, w), dtype=np.uint8)
+
+#-----------------------------------------------------------------
+for class_id, target_color in enumerate(COLOR_MAP):
+    matches = np.all(img == target_color, axis=-1)
+    mask[matches] = class_id
+plt.imshow(mask)
+
+mask.min() , mask.max()
+
+
+# 이 마스크 데이터를 폴더단위로 작업해서 저장 npy 또는 형식정해서 저장해야함
