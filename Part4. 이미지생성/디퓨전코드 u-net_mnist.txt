@@ -1,0 +1,172 @@
+import torch
+import torch.nn as nn
+import torch.nn.functional as F
+from torchvision import datasets, transforms
+from torch.utils.data import DataLoader
+import matplotlib.pyplot as plt
+
+device = "cuda" if torch.cuda.is_available() else "cpu"
+print("device:", device)
+
+# ======================================
+# 1) MNIST Dataset
+# ======================================
+transform = transforms.ToTensor()
+ds = datasets.MNIST(root="./data", train=True, download=True, transform=transform)
+loader = DataLoader(ds, batch_size=128, shuffle=True)
+
+
+# ======================================
+# 2) Diffusion Schedule (beta, alpha)
+# ======================================
+T = 1000
+beta = torch.linspace(1e-4, 0.02, T).to(device)
+alpha = 1 - beta
+alpha_bar = torch.cumprod(alpha, dim=0)
+
+
+# ======================================
+# 3) UNet-lite (교육용)
+# ======================================
+class Block(nn.Module):
+    def __init__(self, in_c, out_c):
+        super().__init__()
+        self.conv = nn.Sequential(
+            nn.Conv2d(in_c, out_c, 3, padding=1),
+            nn.GroupNorm(1, out_c),
+            nn.SiLU(),
+            nn.Conv2d(out_c, out_c, 3, padding=1),
+            nn.GroupNorm(1, out_c),
+            nn.SiLU(),
+        )
+
+    def forward(self, x):
+        return self.conv(x)
+
+
+class UNet(nn.Module):
+    def __init__(self):
+        super().__init__()
+
+        self.down1 = Block(1, 32)
+        self.down2 = Block(32, 64)
+        self.down3 = Block(64, 128)
+
+        self.pool = nn.MaxPool2d(2)
+
+        self.up1 = Block(128 + 64, 64)
+        self.up2 = Block(64 + 32, 32)
+
+        self.final = nn.Conv2d(32, 1, 1)
+
+    def forward(self, x):
+        # Encoder
+        x1 = self.down1(x)
+        x2 = self.down2(self.pool(x1))
+        x3 = self.down3(self.pool(x2))
+
+        # Decoder
+        u1 = F.interpolate(x3, scale_factor=2, mode="nearest")
+        u1 = self.up1(torch.cat([u1, x2], dim=1))
+
+        u2 = F.interpolate(u1, scale_factor=2, mode="nearest")
+        u2 = self.up2(torch.cat([u2, x1], dim=1))
+
+        return self.final(u2)
+
+
+model = UNet().to(device)
+opt = torch.optim.Adam(model.parameters(), lr=1e-4)
+criterion = nn.MSELoss()
+
+
+# ======================================
+# 4) Forward Diffusion q(x_t | x_0)
+# ======================================
+def q_sample(x0, t, noise=None):
+    if noise is None:
+        noise = torch.randn_like(x0)
+
+    sqrt_ab = torch.sqrt(alpha_bar[t]).view(-1, 1, 1, 1)
+    sqrt_1_ab = torch.sqrt(1 - alpha_bar[t]).view(-1, 1, 1, 1)
+
+    return sqrt_ab * x0 + sqrt_1_ab * noise
+
+
+# ======================================
+# 5) Training (ε prediction)
+# ======================================
+print("Training...")
+
+for epoch in range(20):   # 2 epochs 예시로
+    for x0, _ in loader:
+        x0 = x0.to(device)
+        b = x0.shape[0]
+
+        t = torch.randint(0, T, (b,), device=device)
+        noise = torch.randn_like(x0)
+
+        # forward: x_t 생성
+        x_t = q_sample(x0, t, noise)
+
+        # 모델이 예측하는 것은 noise(ε)
+        eps_pred = model(x_t)
+
+        loss = criterion(eps_pred, noise)
+
+        opt.zero_grad()
+        loss.backward()
+        opt.step()
+
+    print(f"[epoch {epoch}] loss = {loss.item():.4f}")
+
+
+# ======================================
+# 6) Reverse Sampling (x_T → x_0)
+# ======================================
+@torch.no_grad()
+def p_sample(x, t_int):
+    """
+    t_int = int (Python int)
+    """
+    t = torch.tensor([t_int], device=device).long()
+    beta_t = beta[t_int]
+    alpha_t = alpha[t_int]
+    alpha_bar_t = alpha_bar[t_int]
+
+    eps = model(x)
+
+    mean = (1 / torch.sqrt(alpha_t)) * (
+        x - beta_t / torch.sqrt(1 - alpha_bar_t) * eps
+    )
+
+    if t_int == 0:
+        return mean
+
+    z = torch.randn_like(x)
+    sigma = torch.sqrt(beta_t)
+    return mean + sigma * z
+
+
+@torch.no_grad()
+def sample(n=16):
+    x = torch.randn(n, 1, 28, 28).to(device)
+    for t_int in reversed(range(T)):
+        x = p_sample(x, t_int)
+    return x
+
+
+# ======================================
+# 7) Generate Samples
+# ======================================
+print("Sampling images...")
+
+samples = sample(8).cpu()
+
+fig, axs = plt.subplots(1, 8, figsize=(12, 2))
+for i in range(8):
+    axs[i].imshow(samples[i, 0], cmap="gray")
+    axs[i].axis("off")
+plt.show()
+
+
