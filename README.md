@@ -4,7 +4,7 @@
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
 
 
-## 02_깃으로 버전 관리하기.pdf  복습자료
+## 02_깃으로 버전 관리하기.pdf  복습자료 (운영체제,git폴더)
 - 복습_01_가상환경_git push.pdf
 - 복습_02_gitLog_되살리기등.pdf
 ## Part5. 파이썬 환경 (for Mac/Windows) & git
