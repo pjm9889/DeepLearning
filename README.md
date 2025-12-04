@@ -14,4 +14,8 @@
 #### 이론: 12.02(화) 17:00 - 12.03(수) 12까지   & 12.03(수) 13:00 - 12:05(금) 11:00 까지
 ## Part6. AI 엔지니어 초급 프로젝트 (12.05(금) 12:00 - 12.23(화) 17:00 )
 
+
+## git -> streamlit 배포 
+  -  mediapipe등 일부 모듈은 배포서비스에서 안됨. 
+
 https://teamtasks-hhgidl4p2fevaawz7zknsk.streamlit.app/
