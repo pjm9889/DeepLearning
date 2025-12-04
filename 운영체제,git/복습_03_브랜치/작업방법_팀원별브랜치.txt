@@ -1,0 +1,99 @@
+team-dashboard/
+├── app.py                  ->팀원1
+├── pages/                  
+│   ├── 1_Data_Viz.py   -> 팀원2
+│   └── 2_Games.py     -> 팀원3
+└── requirements.txt     -> 팀원2
+
+팀원들은 각자 브랜치에서 작업함
+작업이 끝나면 → GitHub에서 PR 생성
+팀장이 PR을 보고 코드 확인 → OK면 Merge
+
+
+
+
+1. 팀에서 git에 repo 생성 & 초기세팅 & 초대
+  team_tasks
+  git init
+  git add .
+  git commit -m "Initial commit"
+  git branch -M main
+  git remote add origin <repository-url>
+  git push -u origin main
+
+
+2.  README.md 파일 push
+git add README.md
+git commit -m "readme"
+git push -u origin main
+
+ [만약 main내용을 초기화하면서 push하려면]
+      git push -u origin main --force  
+
+
+3. 각자브랜치생성
+git checkout -b feature/main-page        # 팀원 1
+git checkout -b feature/visualization      # 팀원 2
+git checkout -b feature/mini-games       # 팀원 3
+
+4. 팀원1이 app.py를 생성하고 main-page에 push
+   [ git branch  로    feature/main-page  인지 확인, git switch ]
+  git add app.py
+  git commit -m "Add: 메인 페이지 기본 구조 완성"
+  git push origin feature/main-page
+
+5. 팀원2작업
+  [git branch 로  feature/visualization 인지 확인]
+  [mkdir pages]
+ [pages폴더에-> 1_Data_Viz.py  파일 작성 및 실행 , pip install plotly  설치 ]
+ [루트폴더에 -> requirements.txt  작성 ]
+  streamlit
+  pandas
+  plotly 
+ --------------------------------------------
+git add pages/1_Data_Viz.py
+git add requirements.txt
+git commit -m "Add: 데이터 시각화 페이지 추가"
+git push origin feature/visualization
+
+
+6. 팀원3작업
+[feature/mini-games 브랜치에서]
+  pages/2_Games.py  작성
+
+
+git add pages/2_Games.py
+git commit -m "Add: 미니게임 페이지 추가 (퀴즈, 룰렛, 운세)"
+git push origin feature/mini-games
+
+
+
+7. 병합: 브랜치로 PR(Pull Request) 생
+“내가 만든 브랜치의 변경 내용을 팀에게 검토받고, main(또는 다른 브랜치)에 합쳐 달라고 요청하는 절차
+팀원들은 각자 브랜치에서 작업함
+작업이 끝나면 → GitHub에서 PR 생성  (github 상단에 노란색으로 나옴)
+팀장이 PR을 보고 코드 확인 → OK면 Merge
+
+
+8. 병합완료된 main을 내 컴으로 다운로드하면 됨
+git switch main
+git pull origin main --no-rebase
+
+
+9. 팀원2가 작성한 requirements.txt 를 팀원3이 변경하고자 한다면, 
+
+# 메인 브런치 최신상태를 받고
+git switch main
+git pull origin main
+
+# 자기브런치로가서 main을 가져옴
+git switch feature/mini-games
+git merge main
+
+requirements.txt 수정
+
+git add requirements.txt
+git commit -m "Update: requirements에 numpy 추가"
+git push origin feature/mini-games
+
+
