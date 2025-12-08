@@ -4,6 +4,8 @@
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
 
 ## 초급프로젝트 일정표
+[강사공지사항] https://www.notion.so/2abddc34afe58034acb1e55e286fb77c  
+
 | 항목                          | 내용                                 |
 | --------------------------- | ---------------------------------- |
 | **초급 프로젝트 기간**              | **12/5(금) ~ 12/23(화)**             |
