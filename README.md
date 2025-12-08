@@ -3,6 +3,17 @@
 #### 강의요청사항: https://forms.gle/37KT54JSPZU5kyHu7
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
 
+
+## 미션풀이 일정표
+미션풀이 일정표입니다. 
+2025.12.09(화) 오후 1시-2시  (객체인식)
+2025.12.10(수) 오후 1시-2시 (이미지분류)
+2025.12.11(목) 오후 1시-2시  (GAN)
+2025.12.16(화) 오후 1시-2시 (세그멘테이션)
+2025.12.18(화) 오후 1시-2시  (RNN 벡터임베딩)
+
+
+
 ## 초급프로젝트 일정표
 [강사공지사항] https://www.notion.so/2abddc34afe58034acb1e55e286fb77c  
 
@@ -14,6 +25,8 @@
 | **발표 일정**                   | **12/23(화)** (자세한 안내 추후 공지)        |
 | **결과물 LMS 제출 마감 / 경진대회 마감** | **12/23(화) 23:50**                 |
 | **Private Leaderboard 공개**  | **12/24(수) 00:00** (경진대회 마감 10분 뒤) |
+
+
 
 
 
