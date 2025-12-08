@@ -4,7 +4,7 @@
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
 
 
-## 미션풀이 일정표
+## 미션풀이 일정표  (장소:메인강의장 / 참여원하시는분만 들으셔도 됩니다.)
 - 2025.12.09(화) 오후 1시-2시  (객체인식)
 - 2025.12.10(수) 오후 1시-2시 (이미지분류)
 - 2025.12.11(목) 오후 1시-2시  (GAN)
