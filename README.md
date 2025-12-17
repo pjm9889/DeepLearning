@@ -4,10 +4,6 @@
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
 
 
-## 미션풀이를 변경합니다. 강의로 진행하지 않고 최대한 자료에 주석을 꼼꼼히 달아서 넣겠습니다.
-## 또는 12월15일 이후에 요청하시면 진행하겠습니다. (현재 데이터 전처리 때문에 정신들이 없으시네요)
-  - 벡터임베딩 관련해서는 다음주 금요일 오후정도에다시 시간 잡겠습니다.
-
 ## 훈련데이터에 없는 테스트자료
 https://www.notion.so/2cbddc34afe5809186efe3bedfbdc194
 
