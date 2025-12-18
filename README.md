@@ -4,12 +4,5 @@
 에스케이-proj-wEq5LHXbAEi0XC6AuwlS_mXcr8W5X2z0ffIl3ilkeCUNc2tZ4nybYSKxMvon8ybffQFsr-dvoST3BlbkFJJ-fv_XKBoJr7pu1G5il_-EGZ6xzHK69iUopLwngdBjpoHHWKRyHW01CdJXwZaB9LXQ1c5Ch84A
 
 
-## 훈련데이터에 없는 테스트자료
-https://www.notion.so/2cbddc34afe5809186efe3bedfbdc194
-
-
-## git docs 사이트: https://git-scm.com/book/ko/v2
-## git -> streamlit 배포 
-  -  mediapipe등 일부 모듈은 배포서비스에서 안됨. 
-
-https://teamtasks-hhgidl4p2fevaawz7zknsk.streamlit.app/
+## 서브미션 결과자료 확인 및 train에 없는 자료 목록리스트
+https://www.notion.so/submission-2cdddc34afe58029b3a7c02a806072ce
